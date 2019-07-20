@@ -1,0 +1,23 @@
+[
+  {
+    "namespace": "cliqzAppConstants",
+    "functions": [
+      {
+        "name": "get",
+        "type": "function",
+        "description": "Retrieves an app constant",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "key",
+            "description": "Constant key"
+          }
+        ],
+        "returns": {
+          "type": "string",
+          "description": "Constant value"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "subprojects": [
+    "@cliqz-oss/dexie",
+    "@cliqz/adblocker",
+    "math",
+    "moment",
+    "pako",
+    "tldts",
+    "ua-parser-js"
+  ]
+}

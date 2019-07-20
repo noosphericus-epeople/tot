@@ -1,0 +1,17 @@
+<div class="instant calculator" >
+    <div class="header padded">
+      <p class="title">
+        <a
+          id="calc-answer"
+          class="result"
+          data-url="{{url}}"
+        >
+          {{#if isRounded}}≈{{else}}={{/if}} {{result}}
+          <span class="tooltip">
+            {{local 'click_anywhere_to_copy'}}
+          </span>
+        </a>
+    </p>
+
+    </div>
+</div>

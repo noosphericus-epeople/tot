@@ -1,0 +1,40 @@
+{
+    "launchers": {
+      "unit-node": {
+        "exe": "node",
+        "args": ["--icu-data-dir=node_modules/full-icu", "tests/runners/unit-node.js"],
+        "protocol": "tap"
+      },
+      "firefox-web-ext-stresstest": {
+        "exe": "node",
+        "args": ["tests/runners/firefox-web-ext-stresstest.js"],
+        "protocol": "tap"
+      },
+      "firefox-web-ext": {
+        "exe": "node",
+        "args": ["tests/runners/firefox-web-ext.js"],
+        "protocol": "tap"
+      },
+      "ghostery-headless": {
+        "exe": "node",
+        "args": ["tests/runners/ghostery-headless.js"],
+        "protocol": "tap"
+      },
+      "chromium-headless": {
+        "exe": "node",
+        "args": ["tests/runners/chromium-headless.js"],
+        "protocol": "tap"
+      },
+      "react-native":{
+        "exe":"bash",
+        "args": ["tests/runners/react-native.sh"],
+        "protocol": "tap"
+      }
+    },
+    "browser_args": {
+      "chromium": [
+        "--no-sandbox"
+      ]
+    },
+    "test_page": "tests/index.mustache"
+}

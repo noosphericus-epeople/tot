@@ -1,0 +1,127 @@
+// Defining Color Palette
+$neutral: #f7f7ff;
+$safe: #e7ffe7;
+$unsafe: #fce8f0;
+$black: #1a1a25;
+$light-background: #fcfcfc;
+$purple: #5755d9;
+$orange: orange;
+
+.container {
+    color: $black;
+    padding-top: 5%;
+    width: 75%;
+    max-width: 1000px;
+    .toast{
+        margin-bottom: 20px;
+    }
+    .no-background{ background: none;}
+    .unsafe {
+        background: $unsafe;
+    }
+    .safe {
+        background: $safe;
+    }
+    .card {
+        margin-bottom: 40px;
+        .card-subtitle {
+            color: $black;
+        }
+        .card-footer {
+            background: $light-background;
+            font-size: 0.7rem;
+            margin-top: 25px;
+        }
+    }
+    pre {
+        font-size: 80%;
+        font-family: monospace;
+        font-weight: 500;
+        color: black;
+        background: $neutral;
+        padding: 20px;
+        border-radius: 3px;
+    }
+    code {
+        background: $neutral;
+        border-radius: 0.14rem;
+        color: $black;
+        font-size: 80%;
+        line-height: 1.2;
+        padding: 0.1rem 0.3rem;
+        white-space: nowrap;
+        font-family: monospace;
+    }
+    .status-legend{
+        text-align: right;
+        margin-right: 10px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        line-height: 1;
+        li{
+            list-style: none;
+        }
+    }
+    .aggregation-needed{
+        color: $orange;
+        margin-left: 10px;
+    }
+    .no-aggregation-needed{
+        color: $purple;
+        margin-left: 10px;
+    }
+    .send-status{
+        float: right;
+    }
+    .nav {
+        position: fixed;
+        margin-right: 2%;
+        a {
+            display: block;
+            color: $black;
+        }
+        li {
+            padding: 5px;
+            border-radius: 3px;
+        }
+        li:hover {
+            background: $neutral;
+        }
+    }
+    .accordion {
+        cursor: pointer;
+        .label{
+          margin-left: 10px;
+          font-size: 0.8em;
+          min-width: 30px;
+          text-align: center;
+          border-radius: 15px;
+          background: $purple;
+          color: white;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        .accordion-body {
+            padding: 2%;
+            max-height: 100%;
+            margin: auto;
+            .btn {
+                float: left;
+            }
+            .description{
+                color: gray;
+                font-size: 0.75rem;
+            }
+        }
+    }
+    .highlight {
+        background: $safe;
+    }
+    .dem-factor-item {
+        list-style: none;
+    }
+    .dem-factor-name {
+        float: left;
+        width: 100px;
+    }
+}

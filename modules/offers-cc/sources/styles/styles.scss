@@ -1,0 +1,35 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  overflow-x: auto;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+#cliqz-offers-cc {
+  font-family: "-mac-system", "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: normal;
+}
+
+@import "Tooltip";
+@import "TooltipExtra";
+@import "Main";
+@import "Header";
+@import "Menu";
+@import "WhyDoIsee";
+@import "Empty";
+@import "Feedback";
+@import "Content";
+@import "Footer";
+@import "Badge";
+@import "Card/Conditions";
+@import "Card/Card";
+@import "Card/Promo";
+@import "Card/Header";
+@import "Lodge/Conditions";
+@import "Lodge/Lodge";
+@import "Lodge/Promo";
+@import "Lodge/PromoV2";
+@import "Lodge/Header";
+@import "Lodge/Button";

@@ -1,0 +1,6 @@
+{{#if newsAvailable}}
+    <p class="news-injection-title">{{ local 'soccer_news_title' }}</p>
+    <div class="news-injection column-{{ numberOfNews }}">
+        {{> partials/news}}
+    </div>
+{{/if}}

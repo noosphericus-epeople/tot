@@ -1,0 +1,27 @@
+{{#if offerResult}}
+<div class="injected-offer clearfix padded">
+    <div class="wrapper white-background">
+        {{#if offerResult.showThumbnail}}
+        <div class="thumbnail">
+            <img src="{{offerResult.thumbnail}}" data-extra="image" />
+        </div>
+        {{/if}}
+        <div class="offer-content">
+            <a
+                class="result non-selectable offer-title"
+                data-url="{{offerResult.offerSource.url}}"
+                href="{{offerResult.offerSource.url}}"
+                data-extra="use"
+            >
+                {{ offerResult.offerSource.title }}
+            </a>
+            <p>
+                <span class="ad-label">Anzeige</span>
+                <span class="offer-description" data-extra="description">
+                    {{emphasis offerResult.offerSource.description query 2 true}}
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+{{/if}}

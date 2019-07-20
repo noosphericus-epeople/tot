@@ -1,0 +1,103 @@
+@mixin transitionNotifications() {
+    transition: transform 0.35s ease-out;
+}
+
+@mixin undo-notifications (
+    $cliqz-home-bg,
+    $cliqz-history-bg,
+    $cliqz-worldcup-bg,
+    $cliqz-settings-bg,
+    $cliqz-modules-bg,
+
+    $button-color,
+    $button-color-hover,
+    $background-mask-color,
+){
+    $undo-button-color: #0078CA;
+    .undo-notification-box {
+      @include transitionNotifications();
+
+      position: absolute;
+      right: -400px;
+      padding: 17px;
+      padding-right: 12px;
+      margin-top: 20px;
+      color: rgba(0,0,0,0.7);
+      background: #fff;
+      border-radius: 2px;
+      box-shadow: 0px 6px 25px 0px rgba(0,0,0,0.24);
+      min-width: 370px;
+      font-size: 13.5px;
+      font-weight: 300;
+      height:60px;
+      z-index: 1000;
+
+      .removed-dial {
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 150px;
+        text-overflow: ellipsis;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: rgba(0,0,0,0.85);
+        display: inline-block;
+        top:3px;
+        position: relative;
+      }
+
+      &.visible {
+        transform: translate3d(-467px, 0, 0);
+      }
+
+      &.padded.visible {
+        transform: translate3d(-680px, 0, 0);
+      }
+
+      button {
+        cursor: pointer;
+        border: 0;
+        background: transparent;
+
+        &.undo {
+          color: $undo-button-color;
+          opacity: 0.80;
+          letter-spacing: 1px;
+          text-align: middle;
+          margin: 0px 10px 0px 10px;
+          text-transform: uppercase;
+          font-size: 10.5px;
+          font-weight: 500;
+
+          &:hover {
+            opacity: 1;
+            -webkit-transition: opacity 1 ease;
+            -moz-transition: opacity 1 ease;
+            -ms-transition: opacity 1 ease;
+            -o-transition: opacity 1 ease;
+          }
+        }
+
+        &.close {
+          float: right;
+          clear: both;
+          background: url(../images/close-undo.svg) no-repeat;
+          width: 15px;
+          height: 15px;
+          overflow: hidden;
+          text-indent: 100%;
+          white-space: nowrap;
+          position: relative;
+          top: 6px;
+
+          &:hover {
+            background: url(../images/close-undo-hover.svg) no-repeat;
+            -webkit-transition: background 0.5s ease;
+            -moz-transition: background 0.5s ease;
+            -ms-transition: background 0.5s ease;
+            -o-transition: background 0.5s ease;
+          }
+        }
+      }
+    }
+
+}

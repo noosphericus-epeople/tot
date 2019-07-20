@@ -1,0 +1,26 @@
+<div class="instant currency" >
+    <div class="header padded">
+        <p class="title">
+            <a
+                class="result"
+                data-url="{{url}}"
+            >
+                = {{toAmount}} {{toCurrency}} {{#if toCurrencyName}}({{toCurrencyName}}){{/if}}
+                <span class="tooltip">
+                    {{local 'click_anywhere_to_copy'}}
+                </span>
+            </a>
+        </p>
+        <p class="subtitle">
+            <span>
+                {{multiplyer}} {{fromCurrency}} = {{conversionRate}} {{toCurrency}} {{local 'no_legal_disclaimer'}}
+                {{#with sourceWrapper}}
+                    &#183; {{> partials/source}}
+                {{/with}}
+                {{#if updated}}
+                    &#183; {{> partials/timestamp}}
+                {{/if}}
+            </span>
+        </p>
+    </div>
+</div>

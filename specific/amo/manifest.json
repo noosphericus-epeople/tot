@@ -1,0 +1,69 @@
+{
+  "name": "Cliqz Tab",
+  "description": "__MSG_addon_desc_amo__",
+  "version": "{{version}}",
+  "manifest_version": 2,
+  "default_locale": "de",
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "applications": {
+    "gecko": {
+      "id": "cliqz@cliqz.com"
+    }
+  },
+  "browser_action": {
+    "default_icon": {
+      "16":  "assets/button16.png",
+      "48":  "assets/button48.png",
+      "128": "assets/button128.png"
+    },
+    "default_title": "__MSG_offers_hub_title__",
+    "default_popup": "modules/offers-cc/index.html?popup"
+  },
+  "permissions": [
+    "<all_urls>",
+    "bookmarks",
+    "geolocation",
+    "history",
+    "management",
+    "notifications",
+    "contextMenus",
+    "storage",
+    "tabs",
+    "activeTab",
+    "topSites",
+    "unlimitedStorage",
+    "webRequest",
+    "webNavigation",
+    "webRequestBlocking"
+  ],
+  "background": {
+    "scripts": [
+      "modules/vendor/math-expression-evaluator.min.js",
+      "modules/vendor/dexie.min.js",
+      "modules/webextension-specific/app.bundle.js"
+    ]
+  },
+  "chrome_url_overrides": {
+    "newtab": "modules/freshtab/home.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "run_at": "document_start",
+      "match_about_blank": true,
+      "js": [
+        "modules/core/content-script.bundle.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "modules/browser-panel/index.html",
+    "modules/offers-cc/index.html"
+  ]
+}

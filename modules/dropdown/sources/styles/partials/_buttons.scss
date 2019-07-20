@@ -1,0 +1,57 @@
+#cliqz-dropdown {
+    .buttons {
+        padding: 2px 0 2px 0px;
+        font-size: 13px;
+        display: inline-block;
+
+        &:after {
+            @extend .clearfix;
+        }
+
+        .result.btn {
+            @extend .ellipsis;
+
+            display: inline-block;
+            max-width: 170px;
+            line-height: 24px;
+            margin: 0 5px -4px 0;
+            padding: 0 9px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 3px;
+            border: 1px solid #CFE6FF;
+            background-color: rgba(255, 255, 255, 0.7);
+
+            &:hover {
+                background: #E7ECEE;
+            }
+
+            &.selected {
+                border-color: #2385E7;
+                background-color: #2385E7;
+            }
+        }
+
+        .result {
+            height: auto;
+        }
+    }
+
+    .result.expand-btn {
+        display: inline-block;
+        padding: 2px 10px 2px 12px;
+        color: #545454;
+        font-size: 12.5px;
+        line-height: 16px;
+        text-decoration: none;
+        background-image: url-prefix("dropdown/images/expand.svg");
+        background-repeat: no-repeat;
+        background-size: 6px 10px;
+        background-position: 0 center;
+        cursor: pointer;
+
+        &.hovered {
+            color: #0078CA;
+        }
+    }
+}

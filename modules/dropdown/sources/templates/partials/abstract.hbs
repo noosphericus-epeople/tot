@@ -1,0 +1,57 @@
+<div class="abstract">
+    {{#exists thumbnail}}
+        {{#if thumbnail}}
+            <div class="thumbnail">
+                <img src="{{thumbnail}}" data-extra="image" />
+                {{#if isVideo}}
+                <span class="duration">&#9658; {{duration}}</span>
+                {{/if}}
+            </div>
+        {{else}}
+            <div class="thumbnail">
+                <span class="no-thumbnail" {{#if logoDetails.style}}style="{{logoDetails.style}}"{{/if}}>
+                </span>
+            </div>
+        {{/if}}
+    {{/exists}}
+
+    <div class="content">
+        <p>
+            <span data-extra="title" class="title">{{emphasis title query 2 true}}</span>
+            {{#if friendlyUrl}}
+                <span class="divider">&#8212;</span>
+                <span data-extra="url" class="url">{{emphasis friendlyUrl query 2 true}}</span>
+            {{/if}}
+        </p>
+
+        <p>
+          {{#if isBreakingNews}}
+              <span class="breaking-news">
+                  {{local 'breaking_news_label'}}
+              </span>
+          {{/if}}
+          {{#if publishedAt}}
+              <span class="published-at subtitle attention">
+                  {{agoline publishedAt}}
+              </span>
+          {{/if}}
+            {{#if description}}
+                {{#unless isHistory}}
+                    {{#if isAd}}
+                        <span class="ad">Anzeige</span>
+                    {{/if}}
+                {{/unless}}
+                <span class="description" data-extra="description">{{emphasis description query 2 true}}</span>
+            {{else}}
+                <span class="description" data-extra="full-url">{{emphasis url query 2 true}}</span>
+            {{/if}}
+
+
+            {{#if videoViews}}
+                <span class="video-views subtitle normal">
+                    {{videoViews}} {{local 'views'}}
+                </span>
+            {{/if}}
+        </p>
+    </div>
+</div>

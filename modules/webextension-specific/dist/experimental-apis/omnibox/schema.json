@@ -1,0 +1,190 @@
+[{
+  "namespace": "omnibox2",
+  "description": "Implements the CLIQZ search dropdown",
+  "functions": [{
+      "name": "override",
+      "type": "function",
+      "description": "Overrides the dropdown",
+      "async": "callback",
+      "parameters": [{
+          "type": "object",
+          "name": "options",
+          "optional": true,
+          "properties": {
+            "placeholder": {
+              "type": "string",
+              "optional": true
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "callback",
+          "optional": true,
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "name": "restore",
+      "type": "function",
+      "description": "Restores default dropdown",
+      "async": "callback",
+      "parameters": [{
+        "type": "function",
+        "name": "callback",
+        "optional": true,
+        "parameters": []
+      }]
+    },
+    {
+      "name": "getResult",
+      "type": "function",
+      "description": "Returns currently selected and hovered results",
+      "async": "callback",
+      "parameters": [{
+        "type": "number",
+        "name": "windowId",
+        "optional": true
+      },
+      {
+        "type": "function",
+        "name": "callback",
+        "optional": true,
+        "parameters": [{
+          "name": "details",
+          "type": "object"
+        }]
+      }]
+    },
+    {
+      "name": "update",
+      "type": "function",
+      "description": "Update urlbar value",
+      "async": "callback",
+      "parameters": [{
+        "type": "number",
+        "name": "windowId",
+        "optional": true
+      },
+      {
+        "type": "object",
+        "name": "options",
+        "default": {},
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "",
+            "optional": true
+          }
+        }
+      },
+      {
+        "type": "function",
+        "name": "callback",
+        "optional": true,
+        "parameters": []
+      }]
+    },
+    {
+      "name": "query",
+      "type": "function",
+      "description": "Sets a urlbar value and triggers dropdown",
+      "async": "callback",
+      "parameters": [{
+        "type": "number",
+        "name": "windowId",
+        "optional": true
+      },
+      {
+        "type": "string",
+        "name": "query"
+      },
+      {
+        "type": "object",
+        "name": "options",
+        "optional": true,
+        "default": {},
+        "properties": {
+          "openLocation": {
+            "type": "boolean",
+            "default": false,
+            "optional": true
+          },
+          "focus": {
+            "type": "boolean",
+            "optional": true,
+            "default": true
+          }
+        }
+      },
+      {
+        "type": "function",
+        "name": "callback",
+        "optional": true,
+        "parameters": [{
+          "name": "details",
+          "type": "object"
+        }]
+      }]
+    },
+    {
+      "name": "navigateTo",
+      "type": "function",
+      "description": "Handle a urlbar command (open link, search, switch-to-tab etc)",
+      "async": "callback",
+      "parameters": [{
+        "type": "number",
+        "name": "windowId",
+        "optional": true
+      },
+      {
+        "type": "string",
+        "name": "query"
+      },
+      {
+        "type": "object",
+        "name": "options",
+        "optional": true,
+        "default": {},
+        "properties": {
+          "target": {
+            "type": "string",
+            "enum": ["current", "tab", "tabshifted"],
+            "default": "current",
+            "optional": true
+          }
+        }
+      },
+      {
+        "type": "function",
+        "name": "callback",
+        "optional": true,
+        "parameters": [{
+          "name": "details",
+          "type": "object"
+        }]
+      }]
+    },
+    {
+      "name": "getContext",
+      "type": "function",
+      "description": "Gets the addon_child context",
+      "parameters": [],
+      "returns": {
+        "type": "number",
+        "description": "context Id"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "onTelemetryPush",
+      "type": "function",
+      "parameters": [{
+        "name": "telemetry signal details",
+        "type": "object"
+      }]
+    }
+  ]
+}]

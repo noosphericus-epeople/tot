@@ -1,0 +1,23 @@
+{{#if ligaEZGroup}}
+    <div class="wrapper dropdown-tabs">
+        <div class="background-placeholder"></div>
+        {{#if groupTableHeader}}
+            <label class="dropdown-tab-header">{{groupTableHeader}}</label>
+        {{/if}}
+        {{#each ligaEZGroup}}
+            <label
+                id="tab-{{@index}}"
+                class="dropdown-tab {{#if isCurrent}}checked{{/if}}"
+            >{{groupName}}</label>
+        {{/each}}
+        {{#each ligaEZGroup}}
+            <div id="tab-block-{{@index}}"
+                 class="tab-block"
+            >
+                {{#with ligaEZTable}}
+                    {{> partials/soccer/liga-table}}
+                {{/with}}
+            </div>
+        {{/each}}
+    </div>
+{{/if}}

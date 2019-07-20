@@ -1,0 +1,147 @@
+{
+  "name": "__MSG_{{name}}__",
+  "description": "__MSG_browserAppDesc__",
+  "version": "{{version}}",
+  "manifest_version": 2,
+  "default_locale": "de",
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "applications": {
+    "gecko": {
+      "id": "cliqz@cliqz.com",
+      "update_url": "{{updateUrl}}"
+    }
+  },
+  "experiment_apis": {
+    "omnibox2": {
+      "schema": "modules/webextension-specific/experimental-apis/omnibox/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["omnibox2"]],
+        "script": "modules/webextension-specific/experimental-apis/omnibox/api.bundle.js"
+      },
+      "child": {
+        "scopes": ["addon_child"],
+        "paths": [["omnibox2"]],
+        "script": "modules/webextension-specific/experimental-apis/omnibox/api-child.bundle.js"
+      }
+    },
+    "browserAction2": {
+      "schema": "modules/webextension-specific/experimental-apis/browser-action/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["browserAction2"]],
+        "script": "modules/webextension-specific/experimental-apis/browser-action/api.bundle.js"
+      }
+    },
+    "demographics": {
+      "schema": "modules/webextension-specific/experimental-apis/demographics/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["demographics"]],
+        "script": "modules/webextension-specific/experimental-apis/demographics/api.bundle.js"
+      }
+    },
+    "cliqz": {
+      "schema": "modules/webextension-specific/experimental-apis/cliqz/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["cliqz"]],
+        "script": "modules/webextension-specific/experimental-apis/cliqz/api.bundle.js"
+      },
+      "child": {
+        "scopes": ["addon_child"],
+        "paths": [["cliqz"]],
+        "script": "modules/webextension-specific/experimental-apis/cliqz/api-child.bundle.js"
+      }
+    },
+    "cliqzHistory": {
+      "schema": "modules/webextension-specific/experimental-apis/cliqzHistory/schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["cliqzHistory"]],
+        "script": "modules/webextension-specific/experimental-apis/cliqzHistory/api.bundle.js"
+      }
+    },
+    "skeleton": {
+      "schema": "experiments/skeleton/schema.json",
+      "parent": {
+        "scopes": [
+          "addon_parent"
+        ],
+        "script": "experiments/skeleton/api.js",
+        "paths": [
+          [
+            "experiments",
+            "skeleton"
+          ]
+        ]
+      }
+    }
+  },
+  "browser_action": {
+    "default_title": "__MSG_offers_hub_title__",
+    "default_icon": "modules/offers-cc/images/offers-cc-icon.svg",
+    "default_popup": "modules/offers-cc/index.html?popup"
+  },
+  "page_action": {
+    "default_icon": {
+      "19": "modules/video-downloader/images/video-downloader.svg",
+      "38": "modules/video-downloader/images/video-downloader.svg"
+    },
+    "default_title": "__MSG_video_downloader_title__",
+    "default_popup": "modules/video-downloader/index.html"
+  },
+  "permissions": [
+    "<all_urls>",
+    "bookmarks",
+    "clipboardWrite",
+    "cookies",
+    "downloads",
+    "geolocation",
+    "history",
+    "idle",
+    "management",
+    "notifications",
+    "contextMenus",
+    "privacy",
+    "proxy",
+    "storage",
+    "tabs",
+    "activeTab",
+    "topSites",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "background": {
+    "scripts": [
+      "background_intermediate.js",
+      "modules/vendor/math-expression-evaluator.min.js",
+      "modules/vendor/dexie.min.js",
+      "modules/webextension-specific/app.bundle.js",
+      "background.js"
+    ]
+  },
+  "chrome_url_overrides": {
+    "newtab": "modules/freshtab/home.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "run_at": "document_start",
+      "match_about_blank": true,
+      "js": ["modules/core/content-script.bundle.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "modules/browser-panel/index.html",
+    "modules/offers-cc/index.html",
+    "modules/cliqz-history/index.html",
+    "modules/anti-phishing/phishing-warning.html"
+  ]
+}

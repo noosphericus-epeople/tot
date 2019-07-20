@@ -1,0 +1,77 @@
+{
+  "name": "__MSG_{{name}}__",
+  "description": "__MSG_ghosteryTabAppDesc__",
+  "version": "{{version}}",
+  "manifest_version": 2,
+  "default_locale": "en",
+  "icons": {
+    "128": "assets/icon128.png",
+    "48": "assets/icon48.png",
+    "16": "assets/icon16.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "128": "assets/icon128.png",
+      "48": "assets/icon48.png",
+      "16": "assets/icon16.png"
+    },
+    {{CUSTOM_MANIFEST_PAGE_ACTION_POPUP}}
+    "default_title": "Ghostery Tab"
+  },
+  "permissions": [
+    "<all_urls>",
+    {{CUSTOM_MANIFEST_PERMISSIONS}}
+    "bookmarks",
+    "clipboardWrite",
+    "cookies",
+    "geolocation",
+    "history",
+    "idle",
+    "management",
+    "notifications",
+    "privacy",
+    "proxy",
+    "storage",
+    "tabs",
+    "topSites",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "contextMenus"
+  ],
+  "background": {
+    "scripts": [
+      "modules/vendor/dexie.min.js",
+      "modules/vendor/math-expression-evaluator.min.js",
+      "modules/webextension-specific/app.bundle.js",
+      "background.js"
+    ]
+  },
+  "chrome_url_overrides": {
+    "newtab": "modules/freshtab/home.html"
+  },
+  "commands": {
+    "toggle-quicksearch": {
+      "suggested_key": {
+        "default": "{{QUICK_SEARCH_TOGGLE}}"
+      },
+      "description": "Toggle in-page quick search"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "run_at": "document_start",
+      "match_about_blank": true,
+      "js": ["modules/core/content-script.bundle.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "modules/dropdown/dropdown.html",
+    "modules/freshtab/home.html",
+    "modules/overlay/styles/overlay.css",
+    "modules/freshtab/images/ghostery-tab-search-icon.svg"
+  ]
+  {{CUSTOM_MANIFEST_ENTRY}}
+}

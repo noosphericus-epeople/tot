@@ -1,0 +1,16 @@
+{{#if url}}
+    <span class="timeline" style="background-color: #{{logo.backgroundColor}}"></span>
+
+    <a class="result" data-url="{{url}}" href="{{displayUrl}}">
+        {{> partials/logo }}
+        {{> partials/abstract }}
+        {{> partials/images }}
+    </a>
+{{/if}}
+{{> partials/lotto}}
+{{> partials/news}}
+{{> partials/offer/injected-offer}}
+{{#each results}}
+    {{> generic}}
+{{/each}}
+{{> partials/buttons }}

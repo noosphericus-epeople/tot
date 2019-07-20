@@ -1,0 +1,84 @@
+#navigator-toolbox > toolbar#cliqz-toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(#nav-bar):not(#addon-bar){
+    -moz-user-focus: ignore;
+    height: 0px;
+    min-height: 0px;
+    position: relative;
+    padding: 0px;
+    overflow: visible;
+
+    & > div {
+        -moz-user-focus: ignore;
+        width: 100%;
+        height: 0px;
+        position: absolute;
+        z-index: 100000;
+
+        iframe, browser {
+            -moz-user-focus: ignore;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            box-shadow: 0 4px 4px -2px #999;
+            z-index: 100000;
+
+            .dropdown-hidden {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+/* ====== LastQuery ====== the gray container in the search bar */
+
+#cliqzLastQueryBox {
+    display: flex;
+    align-items: center;
+
+    & > hbox {
+        border: 1px solid #BCC8CD;
+        border-radius: 15px;
+        padding: 0 8px 1px 24px;
+        margin-right: 3px;
+
+        max-width: 212px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+
+        &:before {
+            width: 14px;
+            height: 14px;
+            content: url("../../webextension-specific/images/search-icon.svg");
+            position: absolute;
+            top: 0;
+            left: 7px;
+            bottom: 0;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        &:-moz-lwtheme {
+          color: #DEEDFB;
+          background-color: rgba(242, 246, 247, 0.3);
+        }
+
+        &:-moz-lwtheme-darktext {
+          color: #5F7C86;
+          background-color: #F2F6F7;
+        }
+
+        &:hover {
+            background-color: #2385E7;
+            color: #fff;
+            border-color: #2385E7;
+            cursor: pointer;
+
+            &:before {
+                content: url("../../webextension-specific/images/search-icon-inverted.svg");
+            }
+        }
+    }
+}
+
+/* ====== End LastQuery ====== */

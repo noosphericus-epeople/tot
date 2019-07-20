@@ -1,0 +1,360 @@
+$cliqz-blue: #00AEF0;
+$cliqz-dark-blue: #0078CA;
+
+.result.soccer-title {
+    margin-top: 2px;
+    color: $cliqz-dark-blue;
+    text-decoration: none;
+    line-height: 1.33em;
+    padding: 0.33em 5px 0.33em 0;
+
+    .padded {
+        max-width: 70%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    .divider {
+        margin: 0 5px;
+    }
+
+    .soccer-domain {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.833em;
+        line-height: 1.28051em;
+        max-width: 200px;
+        font-weight: 500;
+    }
+}
+
+.soccer {
+    display: inline-block;
+    padding-bottom: 1px;
+
+    .wrapper {
+        display: inline-block;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.17);
+        margin-bottom: 3px;
+        margin-top: 4px;
+        background-color: rgba(255, 255, 255, 0.55);
+        // Use this instead of adding class "white-background" to all .wrapper
+
+        .table {
+            display:table;
+
+            .table-header {
+                display: table-header-group;
+
+                .table-cell {
+                    display: table-cell;
+                    padding: 10px;
+                    font-size: 12.5px;
+                }
+            }
+
+            .table-row {
+                text-decoration: none;
+                display: table-row;
+                color: #000;
+
+                .table-cell {
+                    display: table-cell;
+                    padding: 5px 7px;
+                    vertical-align: middle;
+
+                    &.fixed-width {
+                        width: 130px;
+                        max-width: 130px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    &.club-name {
+                        width: 150px;
+                        max-width: 150px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .league-logo {
+                        width: 50px;
+                        height: 30px;
+                        opacity: 0.5;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+
+                    &.club-logo {
+                        text-align: center;
+
+                        div {
+                            display: inline-block;
+                            width: 30px;
+                            height: 30px;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                        }
+                    }
+                }
+
+                &.result {
+
+                    .table-cell {
+                        box-sizing: content-box;
+
+                        &.host {
+                            text-align: right;
+                        }
+
+                        &.scored {
+                            text-align: center;
+                            min-width: 50px;
+
+                            &.live {
+                                span {
+                                    padding: 3px 5px;
+                                    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.17);
+                                }
+                            }
+                        }
+
+                        &.time {
+                            width: 135px;
+                            font-size: 12.5px;
+                            padding-left: 20px;
+                        }
+
+                        span.is-live {
+                            padding: 2px 3px;
+                            color: #fff;
+                            border-radius: 2px;
+                            font-size: 11px;
+                            background-color: #4ed833;
+                        }
+                    }
+
+                    &:hover {
+                        .table-cell {
+                            background-color: #F2F2F2;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                &:not(:last-child) {
+                    .table-cell {
+                        border-bottom: 1px solid #eee;
+                    }
+                }
+            }
+        }
+    }
+
+    .powered-by {
+        display: inline-block;
+        color: #DBDBDB;
+        font-size: 11px;
+        line-height: 1.28051em;
+        text-decoration: none;
+
+        &:hover {
+            color: #0078CA;
+        }
+    }
+}
+
+.news-injection-title {
+    padding: 5px 0;
+    font-size: 15px;
+    color: #000;
+}
+
+.news-injection {
+    margin-bottom: 8px;
+
+    .news {
+        display: flex;
+
+        .result {
+            margin-right: 4px;
+
+            .icons {
+                display: none;
+            }
+
+            .abstract {
+
+                width: 100%;
+                margin-left: 0;
+
+                .thumbnail {
+                    display: block;
+                    padding-right: 0;
+                    width: auto;
+                    max-width: 83px;
+                    height: 62px;
+                    overflow: hidden;
+                    border-bottom-right-radius: 0;
+                    border-top-right-radius: 0;
+                    border-bottom-left-radius: 3px;
+                    border-top-left-radius: 3px;
+
+
+                    img {
+                        width: auto;
+                    }
+                }
+
+                .content {
+                    border: 1px solid #CFE6FF;
+                    border-bottom-right-radius: 3px;
+                    border-top-right-radius: 3px;
+                    position: relative;
+                    padding: 5px 0 8px 10px;
+                    height: 62px;
+
+                    p {
+                        span {
+                            &.title {
+                                font-size: 0.833em;
+                                font-weight: 500;
+                                line-height: 1.3em;
+                            }
+
+                            &.url {
+                                position: absolute;
+                                bottom: 5px;
+                                left: 10px;
+                                line-height: 1.4em;
+                                width: 50%;
+                            }
+
+                            &.published-at {
+                                position: absolute;
+                                bottom: 5px;
+                                right: 2px;
+                                max-width: 100px;
+                                width: 40%;
+                                text-align: right;
+                            }
+
+                            &.divider, &.description {
+                                display: none;
+                            }
+
+                            &.url[data-extra="url"] {
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+            }
+            &.selected {
+                background-color: transparent;
+                .abstract {
+                    .content {
+                        background-color: #2385E7;
+                        border-color: #2385E7;
+
+                        p {
+                            span {
+                                &.published-at {
+                                    color: rgba(255, 255, 255, 0.8);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.column-2 {
+        .news {
+            .result {
+                .abstract {
+                    .content {
+                        p {
+                            span {
+                                max-width: 238px;
+
+                                &.title {
+                                    white-space: unset;
+                                    position: relative;
+                                    max-height: 2.6em;
+                                    font-weight: 400;
+
+                                    &:after {
+                                        content: "";
+                                        text-align: right;
+                                        position: absolute;
+                                        bottom: 0;
+                                        right: 0;
+                                        width: 20%;
+                                        height: 1.3em;
+                                        background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+                                    }
+                                }
+
+                                &.url {
+                                    max-width: 160px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.selected {
+                    .abstract {
+                        .content {
+                            p {
+                                span {
+                                    &.title {
+                                        &:after {
+                                            background: linear-gradient(to right, rgba(43, 108, 229, 0), #2385e7 50%);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.column-1 {
+        .news {
+            .result {
+                .abstract {
+                    .content {
+                        p {
+                            span {
+                                max-width: 580px;
+
+                                &.description {
+                                    display: inline-block;
+                                    line-height: 1.26804em;
+                                }
+
+                                &.url {
+                                    max-width: 250px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
